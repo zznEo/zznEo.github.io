@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>lougu3865（st表 + 倍增思想） | Never Give Up!</title>
+  <title>lougu-3865-【模板】st表（倍增写法） | Never Give Up!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="数据结构">
@@ -11,18 +11,18 @@
   
   
   
-  <meta name="description" content="描述给定一个长度为 N N 的数列，和 M M 次询问，求出每一次询问的区间内数字的最大值。">
+  <meta name="description" content="给定一个长度为 N N 的数列，和 M M 次询问，求出每一次询问的区间内数字的最大值。">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lougu3865（ST表 + 倍增思想）">
+<meta property="og:title" content="Lougu-3865-【模板】ST表（倍增写法）">
 <meta property="og:url" content="http://yoursite.com/2019/07/15/Lougu3865（ST表+倍增思想）/index.html">
 <meta property="og:site_name" content="Never Give Up!">
-<meta property="og:description" content="描述给定一个长度为 N N 的数列，和 M M 次询问，求出每一次询问的区间内数字的最大值。">
+<meta property="og:description" content="给定一个长度为 N N 的数列，和 M M 次询问，求出每一次询问的区间内数字的最大值。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T04:25:52.100Z">
+<meta property="og:updated_time" content="2019-08-06T05:09:53.723Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lougu3865（ST表 + 倍增思想）">
-<meta name="twitter:description" content="描述给定一个长度为 N N 的数列，和 M M 次询问，求出每一次询问的区间内数字的最大值。">
+<meta name="twitter:title" content="Lougu-3865-【模板】ST表（倍增写法）">
+<meta name="twitter:description" content="给定一个长度为 N N 的数列，和 M M 次询问，求出每一次询问的区间内数字的最大值。">
   
     <link rel="alternate" href="/atom.xml" title="Never Give Up!" type="application/atom+xml">
   
@@ -170,7 +170,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Lougu3865（ST表 + 倍增思想）
+      Lougu-3865-【模板】ST表（倍增写法）
     </h1>
   
 
@@ -195,9 +195,10 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><p>给定一个长度为 N N 的数列，和 M M 次询问，求出每一次询问的区间内数字的最大值。</p>
+        <p>给定一个长度为 N N 的数列，和 M M 次询问，求出每一次询问的区间内数字的最大值。</p>
 <a id="more"></a>
-<!--more-->
+
+<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="https://www.luogu.org/problem/P3865" target="_blank" rel="noopener">Lougu-3865-【模板】ST表</a></p>
 <h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><pre><code>第一行包含两个整数 N , M 分别表示数列的长度和询问的个数。
 
 第二行包含 N N 个整数（记为 ai a i)，依次表示数列的第 i 项。
@@ -205,18 +206,11 @@
 接下来 M行，每行包含两个整数 li, ri，表示查询的区间为 [ li, ri]</code></pre><h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><pre><code>输出包含 M M行，每行一个整数，依次表示每一次询问的结果。</code></pre><h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><blockquote>
 <p>8 8<br>9 3 1 7 5 6 0 8<br>1 6<br>1 5<br>2 7<br>2 6<br>1 8<br>4 8<br>3 7<br>1 8</p>
 </blockquote>
-<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><blockquote>
+<h2 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h2><blockquote>
 <p>9<br>9<br>7<br>7<br>9<br>8<br>7<br>9</p>
 </blockquote>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h4>
-<font face="黑体">
-显然这是一道ST表的模板题。~ 但是重点在于倍增的思想。相比于二分，我们每次对于一个序列进行÷2的折半查找，而倍增则是每次对于序列×2的查  
-找。对于倍增一个很好的运用就是RMQ。~(在？为什么不是LCA)~RMQ就是维护静态区间极值问题，预处理的时间复杂度为O(n*logn)，查询为O(1),对于 
-这道模板题，就必须是O(1)的输出。
-什么是倍增？倍增用到了2进制的思想。我们把数组分割为
-</font>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>显然这是一道ST表的模板题。~ 但是重点在于倍增的思想。相比于二分，我们每次对于一个序列进行÷2的折半查找，而倍增则是每次对于序列×2的查  找。对于倍增一个很好的运用就是RMQ。<del>(在？为什么不是LCA)</del>RMQ就是维护静态区间极值问题，预处理的时间复杂度为O(n*logn)，查询为O(1),对于 这道模板题，就必须是O(1)的输出。什么是倍增？倍增用到了2进制的思想。我们把数组分割为2的次方倍。</p>
 
-</h4>
       
     </div>
     <footer class="article-footer">
@@ -229,7 +223,7 @@
           </li>
           <li class="post-copyright-link">
           <strong>本文链接:  </strong>
-          <a href="/2019/07/15/Lougu3865（ST表+倍增思想）/" target="_blank" title="Lougu3865（ST表 + 倍增思想）">http://yoursite.com/2019/07/15/Lougu3865（ST表+倍增思想）/</a>
+          <a href="/2019/07/15/Lougu3865（ST表+倍增思想）/" target="_blank" title="Lougu-3865-【模板】ST表（倍增写法）">http://yoursite.com/2019/07/15/Lougu3865（ST表+倍增思想）/</a>
           </li>
           <li class="post-copyright-license">
             <strong>版权声明:   </strong>
@@ -266,7 +260,7 @@
   
     <a href="/2019/07/14/LuoguP1338/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">Luogu1338 末日传说</div>
+      <div class="article-nav-title">Luogu-1338-末日传说</div>
     </a>
   
 </nav>
@@ -280,15 +274,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出格式"><span class="nav-number">1.1.</span> <span class="nav-text">输入输出格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式："><span class="nav-number">1.1.1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式："><span class="nav-number">1.1.2.</span> <span class="nav-text">输出格式：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出样例"><span class="nav-number">1.2.</span> <span class="nav-text">输入输出样例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例1："><span class="nav-number">1.2.1.</span> <span class="nav-text">输入样例1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例1："><span class="nav-number">1.2.2.</span> <span class="nav-text">输出样例1：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">
-
-显然这是一道ST表的模板题。~ 但是重点在于倍增的思想。相比于二分，我们每次对于一个序列进行÷2的折半查找，而倍增则是每次对于序列×2的查  
-找。对于倍增一个很好的运用就是RMQ。~(在？为什么不是LCA)~RMQ就是维护静态区间极值问题，预处理的时间复杂度为O(n*logn)，查询为O(1),对于 
-这道模板题，就必须是O(1)的输出。
-什么是倍增？倍增用到了2进制的思想。我们把数组分割为
-
-
-</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出格式"><span class="nav-number">2.</span> <span class="nav-text">输入输出格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式："><span class="nav-number">2.1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式："><span class="nav-number">2.2.</span> <span class="nav-text">输出格式：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出样例"><span class="nav-number">3.</span> <span class="nav-text">输入输出样例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例1："><span class="nav-number">3.1.</span> <span class="nav-text">输入样例1：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出样例1："><span class="nav-number">4.</span> <span class="nav-text">输出样例1：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">5.</span> <span class="nav-text">题解</span></a></li></ol>
     
     </div>
   </aside>
