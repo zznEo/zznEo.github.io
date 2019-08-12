@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>2019牛客暑期多校训练营   (第七场) - c - governing sand | Never Give Up!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="数据结构权值线段树">
+  
+  
+  
+  
+  <meta name="description" content="The Wow village is often hit by wind and sand,the sandstorm seriously hindered the economic development of the Wow village.There is a forest in front of the Wowo village, this forest can prevent the i">
+<meta name="keywords" content="数据结构,权值线段树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019牛客暑期多校训练营   (第七场) - C - Governing sand">
+<meta property="og:url" content="http://yoursite.com/2019/08/12/newke7-C/index.html">
+<meta property="og:site_name" content="Never Give Up!">
+<meta property="og:description" content="The Wow village is often hit by wind and sand,the sandstorm seriously hindered the economic development of the Wow village.There is a forest in front of the Wowo village, this forest can prevent the i">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-12T08:47:38.846Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019牛客暑期多校训练营   (第七场) - C - Governing sand">
+<meta name="twitter:description" content="The Wow village is often hit by wind and sand,the sandstorm seriously hindered the economic development of the Wow village.There is a forest in front of the Wowo village, this forest can prevent the i">
+  
+    <link rel="alternate" href="/atom.xml" title="Never Give Up!" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css">
+  
+
+  
+  
+  
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="Governing sand-newke7-C" style="width: 75%; float:left;" class="article article-type-Governing sand" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      2019牛客暑期多校训练营   (第七场) - C - Governing sand
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2019/08/12/newke7-C/" class="article-date">
+	  <time datetime="2019-08-12T08:04:00.000Z" itemprop="datePublished">2019-08-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/ACM/">ACM</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The Wow village is often hit by wind and sand,the sandstorm seriously hindered the economic development of the Wow village.<br>There is a forest in front of the Wowo village, this forest can prevent the invasion of wind and sand. But there is a rule that the number of tallest trees in the forest should be more than half of all trees, so that it can prevent the invasion of wind and sand. Cutting down a tree need to cost a certain amount of money. Different kinds of trees cost different amounts of money. Wow village is also poor.There are n kinds of trees. The number of i-th kind of trees is $P_i$ , the height of i-th kind of trees is $H_i$，the cost of cutting down one i-th kind of trees is $C_i$.</p>
+<a id="more"></a>
+
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>$N$ 种树，每种树有一个<strong>高度</strong>，砍掉需要的<strong>花费</strong>，以及<strong>数量</strong>。现在我们要把最高的树的数目<strong>严格大于</strong>所有树数目的一半。问所需要的最小花费是多少。</p>
+<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="https://ac.nowcoder.com/acm/contest/887/C" target="_blank" rel="noopener">Governing sand</a></p>
+<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p><strong>多组输入输出且不超过30组</strong><br>对于每组测试样例<br>第一行一个 $N$ 表示有 $N$ 种树 $ 1 \leq N \leq 10^5 $。<br>剩下 $N$ 行，每行有三个数 $H_i$ ($ 1 \leq H_i \leq 10^9 $)， $C_i$ ($ 1 \leq C_i \leq 200 $)，$P_i$ ($ 1 \leq P_i \leq 10^9 $)，分别代表树的<strong>高度</strong>，砍掉这颗树需要的<strong>花费</strong>，这颗树的<strong>数量</strong>。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>对于每个测试用例，应输出最低成本。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5 1 1</span><br><span class="line">1 10 1</span><br><span class="line">2</span><br><span class="line">5 1 2</span><br><span class="line">3 2 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>题目中要求数目的高度必须严格大于</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><del>场上没思路，场下看题解，这题我会啦，这题就是个B级题</del>  </p>
+<p>说正题，题中要求最高的树的数量要大于所有树个数的一半。暴力？贪心？DP？主席树？场上都想过，都没有思路。这题有两种暴力方法一种 $O(n^2)$，另一种 $O(n*c)$，后者可过，所以这题成为了这一场的签到题，我怎么就没想到敲！但是既然是场下补题了就不写暴力了，太LOW。这题 $C$ 的数据范围完全可以出到 $10^9$。就按 $10^9$的数据范围写吧。</p>
+<p>首先我们对这写树按照高度排序，从小到大去遍历这些树，对于第 $i$ 颗树，假设它就是这篇森林里面最高的树，那么对于当前这颗树</p>
+<ul>
+<li>比它高的树全部砍去</li>
+<li>比它矮的树砍去代价最少的使它满足题目要求</li>
+</ul>
+<p>处理了这两个点这题就AC了。对于第一个点，记录一下后缀和，$v[i]$ 表示以 $i$ 颗树为最高树时砍到后面所有树所需要的花费。很容易想到，这肯定要预处理，这样第一个点就解决了。</p>
+<p>对于第二个点，要找在比第 $i$ 颗树矮的树里面找到足够的数目保证题意并且花费最小。这里我们就可以开一个主席树，后者权值线段树。我选择了后者，但是看某篇题解好像说主席树简单好想一点？可我不会主席树难搞。就按权值线段树来写。对于权值线段树，我们维护两个值 $[1-i]$ 内树的数量和砍到这些树的代价和。向后进行枚举，到第i种树时，先把答案加上 $v[i+1]$ 表示如果第 $i$ 种树最高，那么它后面所有种类的树都要砍掉，然后去查询第$i$种树最高的情况下，前面最少需要砍掉树的代价是多少。需要注意的是<strong>多种树的高度相同</strong>的情况。<br>总时间复杂度 $O(n* \log c)$，对与 $C$ 是 $10^9$的数据范围，离散化后一样写。</p>
+<p>总结一些自闭历程</p>
+<ul>
+<li>全程要开 $long long$</li>
+<li>ans的数据范围一开始一直没给够给了 $INF$ 一直没找到BUG 对比了半天题解发现开小了</li>
+<li>还有就是代码比较长，容易多大或者少打一些符号，还是代码打的少。</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">5e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> INF = <span class="number">0x7fffffff</span>;</span><br><span class="line">ll v[MAXN],n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    ll h,c,p;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node a)<span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a.h &gt; h;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; data[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    ll l,r,val,num;</span><br><span class="line">&#125; T[MAXN &lt;&lt; <span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PushUp</span><span class="params">(<span class="keyword">int</span> rt)</span> </span>&#123;</span><br><span class="line">    T[rt].num = T[rt &lt;&lt; <span class="number">1</span>].num + T[rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>].num;</span><br><span class="line">    T[rt].val = T[rt &lt;&lt; <span class="number">1</span>].val + T[rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>].val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Build</span><span class="params">(ll l,ll r,ll rt)</span> </span>&#123;</span><br><span class="line">    T[rt].l = l,T[rt].r = r;</span><br><span class="line">    T[rt].val = T[rt].num = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(l == r)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line"></span><br><span class="line">    ll mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    Build(l,mid,rt &lt;&lt; <span class="number">1</span>);</span><br><span class="line">    Build(mid+<span class="number">1</span>,r,rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">    PushUp(rt);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span><span class="params">(ll val,ll num,ll rt)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T[rt].l == T[rt].r) &#123;</span><br><span class="line">        T[rt].num += num;</span><br><span class="line">        T[rt].val += (ll)num * (ll)val;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ll mid = T[rt].l + T[rt].r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(mid &gt;= val)</span><br><span class="line">        Update(val,num,rt &lt;&lt; <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        Update(val,num,rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">    PushUp(rt);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">Query</span><span class="params">(ll rt,ll num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num &gt;= T[rt].num)</span><br><span class="line">        <span class="keyword">return</span> T[rt].val;</span><br><span class="line">    <span class="keyword">if</span>(T[rt].l == T[rt].r)</span><br><span class="line">        <span class="keyword">return</span> min(num*T[rt].l,T[rt].val);</span><br><span class="line">    <span class="keyword">if</span>(T[rt &lt;&lt; <span class="number">1</span>].num &gt;= num)</span><br><span class="line">        <span class="keyword">return</span> Query(rt &lt;&lt; <span class="number">1</span>,num);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> T[rt &lt;&lt; <span class="number">1</span>].val + Query(rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>,num - T[rt &lt;&lt; <span class="number">1</span>].num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(v,<span class="number">0</span>,<span class="keyword">sizeof</span>(v));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n) &#123;</span><br><span class="line">        init();</span><br><span class="line">        ll l = INF,r = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; data[i].h &gt;&gt; data[i].c &gt;&gt; data[i].p;</span><br><span class="line">            l = min((ll)l,data[i].c);</span><br><span class="line">            r = max((ll)r,data[i].c);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(data+<span class="number">1</span>,data+<span class="number">1</span>+n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt;= <span class="number">1</span>; i--)</span><br><span class="line">            v[i] = v[i+<span class="number">1</span>] + (data[i].c*data[i].p);</span><br><span class="line">        Build(l,r,<span class="number">1</span>);</span><br><span class="line">        ll ans = <span class="number">1e18</span>,sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> k;</span><br><span class="line">            ll now = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(k = <span class="number">0</span>; i+k &lt;= n; k++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(data[i].h != data[i+k].h)</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                now += data[i+k].p;</span><br><span class="line">            &#125;</span><br><span class="line">            k--;</span><br><span class="line">            ll mid = v[i+k+<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(sum &gt;= now) &#123;</span><br><span class="line">                mid += Query(<span class="number">1</span>,sum - now + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            ans = min(ans,mid);</span><br><span class="line">            sum += now;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= i+k; j++) &#123;</span><br><span class="line">                Update(data[j].c,data[j].p,<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            i += k;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>nEo.大魔王</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2019/08/12/newke7-C/" target="_blank" title="2019牛客暑期多校训练营   (第七场) - C - Governing sand">http://yoursite.com/2019/08/12/newke7-C/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+      
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/权值线段树/">权值线段树</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/31/关于ACM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          NYIST-SW-ACM集训队招新介绍
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/10/HDU6534/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Chika and Friendly Pairs (莫队+ 树状数组 + 离散化 + 预处理)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目链接"><span class="nav-number">2.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出格式"><span class="nav-number">3.</span> <span class="nav-text">输入输出格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式"><span class="nav-number">3.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式"><span class="nav-number">3.2.</span> <span class="nav-text">输出格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出样例"><span class="nav-number">4.</span> <span class="nav-text">输入输出样例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例"><span class="nav-number">4.1.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例"><span class="nav-number">4.2.</span> <span class="nav-text">输出样例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">5.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">6.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">7.</span> <span class="nav-text">代码</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2018 - 2019 Never Give Up! All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Never Give Up!
+          </div>
+          <div class="panel-body">
+            Copyright © 2019 nEo.大魔王 All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
