@@ -3,20 +3,26 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Never Give Up!</title>
+  <title>nyist_sw_acm 第二次常规月赛解题报告 | Never Give Up!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="月赛">
   
   
   
-  <meta name="keywords" content="ACMer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Never Give Up!">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  
+  <meta name="description" content="A. CRY翩翩起舞一道超级难的证明的签到题（求偏导）？？实际上大胆猜结论就能过。 题意给你 $ n $ 个点，让你找到一个点使这个点到所有点的平方距离 (欧几里得距离) 和最小。 题解场上卡死，不知道怎么解，场下看了题解不知道怎么证明。用了模拟退火，三分套三分的板子，都过不去。不知道为啥求了费马点，也过不去，可能精度？用这个公式 $ \LARGE x = \frac{\sum_{i = 1}^">
+<meta name="keywords" content="月赛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NYIST_SW_ACM 第二次常规月赛解题报告">
+<meta property="og:url" content="http://yoursite.com/2019/09/23/NYIST-第二次常规月赛解题报告/index.html">
 <meta property="og:site_name" content="Never Give Up!">
+<meta property="og:description" content="A. CRY翩翩起舞一道超级难的证明的签到题（求偏导）？？实际上大胆猜结论就能过。 题意给你 $ n $ 个点，让你找到一个点使这个点到所有点的平方距离 (欧几里得距离) 和最小。 题解场上卡死，不知道怎么解，场下看了题解不知道怎么证明。用了模拟退火，三分套三分的板子，都过不去。不知道为啥求了费马点，也过不去，可能精度？用这个公式 $ \LARGE x = \frac{\sum_{i = 1}^">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-23T11:59:38.759Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Never Give Up!">
+<meta name="twitter:title" content="NYIST_SW_ACM 第二次常规月赛解题报告">
+<meta name="twitter:description" content="A. CRY翩翩起舞一道超级难的证明的签到题（求偏导）？？实际上大胆猜结论就能过。 题意给你 $ n $ 个点，让你找到一个点使这个点到所有点的平方距离 (欧几里得距离) 和最小。 题解场上卡死，不知道怎么解，场下看了题解不知道怎么证明。用了模拟退火，三分套三分的板子，都过不去。不知道为啥求了费马点，也过不去，可能精度？用这个公式 $ \LARGE x = \frac{\sum_{i = 1}^">
   
     <link rel="alternate" href="/atom.xml" title="Never Give Up!" type="application/atom+xml">
   
@@ -47,11 +53,13 @@
   <link rel="stylesheet" href="/css/bootstrap.css">
 
   
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/dialog.css">
   
 
   
 
+  
+    <link rel="stylesheet" href="/css/header-post.css">
   
 
   
@@ -62,194 +70,107 @@
 </html>
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
-  
-    <header id="header">
-
-	<!-- 背景图模式 -->
-	
-
-    
-      <div id="intrologo" class="intro-logo">
-    
- 
-
-
-    <canvas width="100%" height="100%"></canvas>
-    <script>
-      var c = document.getElementsByTagName('canvas')[0],
-          x = c.getContext('2d'),
-          w = window.innerWidth,
-          h = window.innerHeight,
-          pr = window.devicePixelRatio || 1,
-          f = 90,
-          q,
-          m = Math,
-          r = 0,
-          u = m.PI*2,
-          v = m.cos,
-          z = m.random
-      c.width = w*pr
-      c.height = h*pr
-      x.scale(pr, pr)
-      x.globalAlpha = 0.6
-
-      <!-- 折线Polyline背景 -->
-      
-        function i(){
-            x.clearRect(0,0,w,h)
-            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-            while(q[1].x<w+f) d(q[0], q[1])
-        }
-        function d(i,j){   
-            x.beginPath()
-            x.moveTo(i.x, i.y)
-            x.lineTo(j.x, j.y)
-            var k = j.x + (z()*2-0.25)*f,
-                n = y(j.y)
-            x.lineTo(k, n)
-            x.closePath()
-            r-=u/-50
-            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-            x.fill()
-            q[0] = q[1]
-            q[1] = {x:k,y:n}
-        }
-        function y(p){
-            var t = p + (z()*2-1.1)*f
-            return (t>h||t<0) ? y(p) : t
-        }
-        document.getElementById("intrologo").onclick = i
-        document.getElementById("intrologo").ontouchstart = i
-        i()
-
-      <!-- 多边形trianglify背景 -->
-      
-    </script>
-    
-
-    
-      <div id="homelogo" class="homelogo"> 
-    
-
-        
-          <div class="homelogoback" >
-            <h1><a href="#content" id="logo">Never Give Up!</a></h1>
-            <h3></h3>
-            <h5>nEo.大魔王</h5>
-            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
-          </div>
-        
-    
-    </div>
-  </div>
-
-  <!-- 自适应主页背景大图 -->
-  
-
- <!-- home_logo_image居中 -->
- 
-    <script>
-        var homelogodiv = document.getElementById("homelogo");
-        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
-          homelogodiv.style.width = document.body.clientWidth + "px";
-          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
-        } else {
-          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
-          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
-        }
-    </script>
-  
-
-  <div class="intro-navigate">
-      <p class="navigater-list">
-        
-          <a id="beautifont" class="main-nav-link" href="/">首页</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/archives">归档</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/categories">分类</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/tags">标签</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/about">关于</a>
-        
-      </p>
-  </div>
-
-</header>
   
   <div id="container">
     <div id="wrap">
       
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;">
-  
-    <article id="post-关于ACM"  class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="NYIST_SW_ACM 第二次常规月赛解题报告-NYIST-第二次常规月赛解题报告" style="width: 75%; float:left;" class="article article-type-NYIST_SW_ACM 第二次常规月赛解题报告" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
       <header class="article-header">
         
   
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2022/07/31/关于ACM/">NYIST-SW-ACM集训队招新介绍</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2022/07/31/关于ACM/" class="article-date">
-	  <time datetime="2022-07-31T05:49:05.000Z" itemprop="datePublished">2022-07-31</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Q：想锻炼自己的编程能力？</p>
-<p>Q：想与全世界的算法爱好者切磋？</p>
-<p>Q：想在工作、考研中获得优势？</p>
-<p>Q：想不虚度大学光阴，找到可以奋斗四年的目标？</p>
-<p>Q：想成为 Legendary Grandmaster（大佬）？</p>
-<p>A：欢迎加入 <strong>软件学院 ACM 集训队!</strong> 你离精英只差一个 ACM<br>的距离！</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="NYIST_SW_ACM 第二次常规月赛解题报告-NYIST-第二次常规月赛解题报告"  class="article article-type-NYIST_SW_ACM 第二次常规月赛解题报告" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/09/23/NYIST-第二次常规月赛解题报告/">NYIST_SW_ACM 第二次常规月赛解题报告</a>
+    <h1 class="thumb" class="article-title" itemprop="name">
+      NYIST_SW_ACM 第二次常规月赛解题报告
     </h1>
   
 
@@ -265,6 +186,12 @@
     <a class="article-category-link" href="/categories/ACM/">ACM</a>
 
       
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
       
 
     </div>
@@ -293,419 +220,72 @@
     <footer class="article-footer">
       
       
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>nEo.大魔王</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2019/09/23/NYIST-第二次常规月赛解题报告/" target="_blank" title="NYIST_SW_ACM 第二次常规月赛解题报告">http://yoursite.com/2019/09/23/NYIST-第二次常规月赛解题报告/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
       
       
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="又见01串(PK找对象？？？)-又见01串"  class="article article-type-又见01串(PK找对象？？？)" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
+      
         
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/09/04/又见01串/">又见01串</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/月赛/">月赛</a></li></ul>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/09/04/又见01串/" class="article-date">
-	  <time datetime="2019-09-04T11:28:13.000Z" itemprop="datePublished">2019-09-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>给定长度为 $n$ 的 $01$ 串 $S$ ，$m$ 次询问，每次给出长度为 $w_i$ 的 $01$ 串 $Q$。求 $S$ 中和 $Q$ 长度相同且包含 $1$ 的个数相同的子串的个数</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
       
 
     </footer>
   </div>
   
-</article>
-
-<!-- Table of Contents -->
-
-
+    
+<nav id="article-nav">
   
-    <article id="「SNOI2017」一个简单的询问-一个简单的询问"  class="article article-type-「SNOI2017」一个简单的询问" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2022/07/31/关于ACM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/08/19/一个简单的询问/">「SNOI2017」一个简单的询问</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/08/19/一个简单的询问/" class="article-date">
-	  <time datetime="2019-08-19T03:59:31.000Z" itemprop="datePublished">2019-08-19</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>给你一个长度为 $N$ 的序列 $a_i$，$1\leq i\leq N$，和 $q$ 组询问，每组询问读入 $l_1,r_1,l_2,r_2$，需输出</p>
-<p>$$<br>\sum\limits_{x=0}^\infty \text{get}(l_1,r_1,x)\cdot \text{get}(l_2,r_2,x)<br>$$</p>
-<p>$ \text{get}(l,r,x)$ 表示计算区间 $[l,r]$ 中，数字 $x$ 出现了多少次。</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="数列互质-数列互质"  class="article article-type-数列互质" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
+          NYIST-SW-ACM集训队招新介绍
         
+      </div>
+    </a>
   
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/08/13/数列互质/">「美团 CodeM 初赛 Round A」数列互质</a>
-    </h1>
   
+    <a href="/2019/09/04/又见01串/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">又见01串</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/08/13/数列互质/" class="article-date">
-	  <time datetime="2019-08-13T04:11:30.000Z" itemprop="datePublished">2019-08-13</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>给出一个长度为 $n$ 的数列 ${ a_1 , a_2 , a_3 , … , a_n }$，以及 $m$ 组询问 $( l_i , r_i , k_i)$，求区间 $[ l_i , r_i ]$ 中有多少数在该区间中的出现次数与 $k_i$ 互质。</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
   
 </article>
 
 <!-- Table of Contents -->
 
-
-  
-    <article id="Governing sand-newke7-C"  class="article article-type-Governing sand" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
     
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-CRY翩翩起舞"><span class="nav-number">1.</span> <span class="nav-text">A. CRY翩翩起舞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">1.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-CRY痛哭流涕"><span class="nav-number">2.</span> <span class="nav-text">B. CRY痛哭流涕</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-CRY推命题"><span class="nav-number">3.</span> <span class="nav-text">C. CRY推命题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意-1"><span class="nav-number">3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解-1"><span class="nav-number">3.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-1"><span class="nav-number">3.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D-CRY的住宿计划"><span class="nav-number">4.</span> <span class="nav-text">D. CRY的住宿计划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E-CRY的心里阴影"><span class="nav-number">5.</span> <span class="nav-text">E. CRY的心里阴影</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#F-CRY的最大公约数"><span class="nav-number">6.</span> <span class="nav-text">F.CRY的最大公约数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意-2"><span class="nav-number">6.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解-2"><span class="nav-number">6.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-2"><span class="nav-number">6.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol>
     
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/08/12/newke7-C/">2019牛客暑期多校训练营   (第七场) - C - Governing sand</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/08/12/newke7-C/" class="article-date">
-	  <time datetime="2019-08-12T08:04:00.000Z" itemprop="datePublished">2019-08-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
     </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The Wow village is often hit by wind and sand,the sandstorm seriously hindered the economic development of the Wow village.<br>There is a forest in front of the Wowo village, this forest can prevent the invasion of wind and sand. But there is a rule that the number of tallest trees in the forest should be more than half of all trees, so that it can prevent the invasion of wind and sand. Cutting down a tree need to cost a certain amount of money. Different kinds of trees cost different amounts of money. Wow village is also poor.There are n kinds of trees. The number of i-th kind of trees is $P_i$ , the height of i-th kind of trees is $H_i$，the cost of cutting down one i-th kind of trees is $C_i$.</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="Chika and Friendly Pairs-HDU6534"  class="article article-type-Chika and Friendly Pairs" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/08/10/HDU6534/">Chika and Friendly Pairs (莫队+ 树状数组 + 离散化 + 预处理)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/08/10/HDU6534/" class="article-date">
-	  <time datetime="2019-08-10T09:33:56.000Z" itemprop="datePublished">2019-08-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个区间中如果存在这样的一对数字 $（A,B）$ 并且 $abs（A-B）$ 不大于 $K$ ，我们就称这一对数字为奇妙的数字对。现在给出你长为n的序列，求奇妙数字对 $（i，j）$ 在 $[L,R]$ 中的个数。</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Lougu3865（ST表+倍增思想）"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/07/15/Lougu3865（ST表+倍增思想）/">Lougu-3865-【模板】ST表（倍增写法）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/07/15/Lougu3865（ST表+倍增思想）/" class="article-date">
-	  <time datetime="2019-07-15T02:54:17.000Z" itemprop="datePublished">2019-07-15</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>给定一个长度为 N N 的数列，和 M M 次询问，求出每一次询问的区间内数字的最大值。</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Luogu1338"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/07/14/Luogu1338/">Luogu-1338-末日传说</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/07/14/Luogu1338/" class="article-date">
-	  <time datetime="2019-07-14T09:41:40.000Z" itemprop="datePublished">2019-07-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>只要是参加jsoi活动的同学一定都听说过Hanoi塔的传说：三根柱子上的金片每天被移动一次，当所有的金片都被移完之后，世界末日也就随之降临了。</p>
-<p>在古老东方的幻想乡，人们都采用一种奇特的方式记录日期：他们用一些特殊的符号来表示从1开始的连续整数，1表示最小而N表示最大。创世纪的第一天，日历就被赋予了生命，它自动地开始计数，就像排列不断地增加。</p>
-<p>我们用1-N来表示日历的元素，第一天日历就是</p>
-<p>1, 2, 3, … N</p>
-<p>第二天，日历自动变为</p>
-<p>1, 2, 3, … N, N-1</p>
-<p>……每次它都生成一个以前未出现过的“最小”的排列——把它转为N+1进制后数的数值最小。</p>
-<p>日子一天一天地过着。有一天，一位预言者出现了——他预言道，当这个日历到达某个上帝安排的时刻，这个世界就会崩溃……他还预言到，假如某一个日期的逆序达到一个值M的时候，世界末日就要降临。</p>
-<p>什么是逆序？日历中的两个不同符号，假如排在前面的那个比排在后面的那个更大，就是一个逆序，一个日期的逆序总数达到M后，末日就要降临，人们都期待一个贤者，能够预见那一天，到底将在什么时候到来？</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Luogu1725"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/06/10/Luogu1725/">Luogu-1725-琪露诺</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/06/10/Luogu1725/" class="article-date">
-	  <time datetime="2019-06-10T09:33:56.000Z" itemprop="datePublished">2019-06-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在幻想乡，琪露诺是以笨蛋闻名的冰之妖精。</p>
-<p>某一天，琪露诺又在玩速冻青蛙，就是用冰把青蛙瞬间冻起来。但是这只青蛙比以往的要聪明许多，在琪露诺来之前就已经跑到了河的对岸。于是琪露诺决定到河岸去追青蛙。</p>
-<p>小河可以看作一列格子依次编号为0到N，琪露诺只能从编号小的格子移动到编号大的格子。而且琪露诺按照一种特殊的方式进行移动，当她在格子i时，她只移动到区间[i+l,i+r]中的任意一格。你问为什么她这么移动，这还不简单，因为她是笨蛋啊。</p>
-<p>每一个格子都有一个冰冻指数A[i]，编号为0的格子冰冻指数为0。当琪露诺停留在那一格时就可以得到那一格的冰冻指数A[i]。琪露诺希望能够在到达对岸时，获取最大的冰冻指数，这样她才能狠狠地教训那只青蛙。</p>
-<p>但是由于她实在是太笨了，所以她决定拜托你帮它决定怎样前进。</p>
-<p>开始时，琪露诺在编号0的格子上，只要她下一步的位置编号大于N就算到达对岸。</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
-  </nav>
+  </aside>
 
 </section>
         
       </div>
-      
-        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
       
       <footer id="footer">
   
@@ -797,9 +377,9 @@
 <script src="/js/scripts.js"></script>
 
 
-  <script src="/js/home.js"></script>
 
 
+  <script src="/js/dialog.js"></script>
 
 
 
@@ -884,6 +464,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
