@@ -3,20 +3,28 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Never Give Up!</title>
+  <title>luogu-1282-多米诺骨牌 | Never Give Up!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="dp">
   
   
   
-  <meta name="keywords" content="ACMer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Never Give Up!">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  
+  <meta name="description" content="多米诺骨牌有上下2个方块组成，每个方块中有1~6个点。现有排成行的 上方块中点数之和记为S1，下方块中点数之和记为S2，它们的差为|S1-S2|。例如在图8-1中，S1=6+1+1+1=9，S2=1+5+3+2=11，|S1-S2|=2。每个多米诺骨牌可以旋转180°，使得上下两个方块互换位置。 编程用最少的旋转次数使多米诺骨牌上下2行点数之差达到最小。  对于图中的例子，只要将最后一个多米诺骨牌">
+<meta name="keywords" content="dp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Luogu-1282-多米诺骨牌">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/Luogu 1282 多米诺骨牌/index.html">
 <meta property="og:site_name" content="Never Give Up!">
+<meta property="og:description" content="多米诺骨牌有上下2个方块组成，每个方块中有1~6个点。现有排成行的 上方块中点数之和记为S1，下方块中点数之和记为S2，它们的差为|S1-S2|。例如在图8-1中，S1=6+1+1+1=9，S2=1+5+3+2=11，|S1-S2|=2。每个多米诺骨牌可以旋转180°，使得上下两个方块互换位置。 编程用最少的旋转次数使多米诺骨牌上下2行点数之差达到最小。  对于图中的例子，只要将最后一个多米诺骨牌">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/pic/91.png">
+<meta property="og:updated_time" content="2019-10-22T05:13:15.747Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Never Give Up!">
+<meta name="twitter:title" content="Luogu-1282-多米诺骨牌">
+<meta name="twitter:description" content="多米诺骨牌有上下2个方块组成，每个方块中有1~6个点。现有排成行的 上方块中点数之和记为S1，下方块中点数之和记为S2，它们的差为|S1-S2|。例如在图8-1中，S1=6+1+1+1=9，S2=1+5+3+2=11，|S1-S2|=2。每个多米诺骨牌可以旋转180°，使得上下两个方块互换位置。 编程用最少的旋转次数使多米诺骨牌上下2行点数之差达到最小。  对于图中的例子，只要将最后一个多米诺骨牌">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/pic/91.png">
   
     <link rel="alternate" href="/atom.xml" title="Never Give Up!" type="application/atom+xml">
   
@@ -47,11 +55,13 @@
   <link rel="stylesheet" href="/css/bootstrap.css">
 
   
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/dialog.css">
   
 
   
 
+  
+    <link rel="stylesheet" href="/css/header-post.css">
   
 
   
@@ -62,194 +72,107 @@
 </html>
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
-  
-    <header id="header">
-
-	<!-- 背景图模式 -->
-	
-
-    
-      <div id="intrologo" class="intro-logo">
-    
- 
-
-
-    <canvas width="100%" height="100%"></canvas>
-    <script>
-      var c = document.getElementsByTagName('canvas')[0],
-          x = c.getContext('2d'),
-          w = window.innerWidth,
-          h = window.innerHeight,
-          pr = window.devicePixelRatio || 1,
-          f = 90,
-          q,
-          m = Math,
-          r = 0,
-          u = m.PI*2,
-          v = m.cos,
-          z = m.random
-      c.width = w*pr
-      c.height = h*pr
-      x.scale(pr, pr)
-      x.globalAlpha = 0.6
-
-      <!-- 折线Polyline背景 -->
-      
-        function i(){
-            x.clearRect(0,0,w,h)
-            q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-            while(q[1].x<w+f) d(q[0], q[1])
-        }
-        function d(i,j){   
-            x.beginPath()
-            x.moveTo(i.x, i.y)
-            x.lineTo(j.x, j.y)
-            var k = j.x + (z()*2-0.25)*f,
-                n = y(j.y)
-            x.lineTo(k, n)
-            x.closePath()
-            r-=u/-50
-            x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-            x.fill()
-            q[0] = q[1]
-            q[1] = {x:k,y:n}
-        }
-        function y(p){
-            var t = p + (z()*2-1.1)*f
-            return (t>h||t<0) ? y(p) : t
-        }
-        document.getElementById("intrologo").onclick = i
-        document.getElementById("intrologo").ontouchstart = i
-        i()
-
-      <!-- 多边形trianglify背景 -->
-      
-    </script>
-    
-
-    
-      <div id="homelogo" class="homelogo"> 
-    
-
-        
-          <div class="homelogoback" >
-            <h1><a href="#content" id="logo">Never Give Up!</a></h1>
-            <h3></h3>
-            <h5>nEo.大魔王</h5>
-            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
-          </div>
-        
-    
-    </div>
-  </div>
-
-  <!-- 自适应主页背景大图 -->
-  
-
- <!-- home_logo_image居中 -->
- 
-    <script>
-        var homelogodiv = document.getElementById("homelogo");
-        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
-          homelogodiv.style.width = document.body.clientWidth + "px";
-          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
-        } else {
-          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
-          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
-        }
-    </script>
-  
-
-  <div class="intro-navigate">
-      <p class="navigater-list">
-        
-          <a id="beautifont" class="main-nav-link" href="/">首页</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/archives">归档</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/categories">分类</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/tags">标签</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/about">关于</a>
-        
-      </p>
-  </div>
-
-</header>
   
   <div id="container">
     <div id="wrap">
       
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;">
-  
-    <article id="post-关于ACM"  class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Luogu 1282 多米诺骨牌" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
       <header class="article-header">
         
   
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2022/07/31/关于ACM/">NYIST-SW-ACM集训队招新介绍</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2022/07/31/关于ACM/" class="article-date">
-	  <time datetime="2022-07-31T05:49:05.000Z" itemprop="datePublished">2022-07-31</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Q：想锻炼自己的编程能力？</p>
-<p>Q：想与全世界的算法爱好者切磋？</p>
-<p>Q：想在工作、考研中获得优势？</p>
-<p>Q：想不虚度大学光阴，找到可以奋斗四年的目标？</p>
-<p>Q：想成为 Legendary Grandmaster（大佬）？</p>
-<p>A：欢迎加入 <strong>软件学院 ACM 集训队!</strong> 你离精英只差一个 ACM<br>的距离！</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Luogu 1282 多米诺骨牌"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/10/21/Luogu 1282 多米诺骨牌/">Luogu-1282-多米诺骨牌</a>
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Luogu-1282-多米诺骨牌
     </h1>
   
 
@@ -265,6 +188,12 @@
     <a class="article-category-link" href="/categories/ACM/">ACM</a>
 
       
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
       
 
     </div>
@@ -294,409 +223,72 @@
     <footer class="article-footer">
       
       
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>nEo.大魔王</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2019/10/21/Luogu 1282 多米诺骨牌/" target="_blank" title="Luogu-1282-多米诺骨牌">http://yoursite.com/2019/10/21/Luogu 1282 多米诺骨牌/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
       
       
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-LuoguP1140 【相似基因】"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
+      
         
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/10/16/LuoguP1140 【相似基因】/">Luogu-1140-相似基因</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li></ul>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/10/16/LuoguP1140 【相似基因】/" class="article-date">
-	  <time datetime="2019-10-16T00:30:00.000Z" itemprop="datePublished">2019-10-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>大家都知道，基因可以看作一个碱基对序列。它包含了 $44$ 种核苷酸，简记作 $A,C,G,T$ 。生物学家正致力于寻找人类基因的功能，以利用于诊断疾病和发明药物。</p>
-<p>在一个人类基因工作组的任务中，生物学家研究的是：两个基因的相似程度。因为这个研究对疾病的治疗有着非同寻常的作用。</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
       
 
     </footer>
   </div>
   
-</article>
-
-<!-- Table of Contents -->
-
-
+    
+<nav id="article-nav">
   
-    <article id="2019年软件计科国庆新生联和赛题解-2019年软件计科国庆新生联和赛题解"  class="article article-type-2019年软件计科国庆新生联和赛题解" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2022/07/31/关于ACM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/10/07/2019年软件计科国庆新生联和赛题解/">2019年软件计科国庆新生联和赛题解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/10/07/2019年软件计科国庆新生联和赛题解/" class="article-date">
-	  <time datetime="2019-10-07T06:00:00.000Z" itemprop="datePublished">2019-10-07</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>种种原因<del>主要是计科的锅</del>，比赛计科前的题目过于儿戏，$rand$ 的题目都往上放，$TC$ 数据只挂输入没挂输出，由于没网，离线 $OJ$ 不能重测，不能删题，全场所有人白给一道题，不过还好没有人因为罚时比别人名次低(前几)。不管软件这次出题真的是面面俱到了，<strong>希望大家认真补题</strong>。</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="NYIST_SW_ACM 第二次常规月赛解题报告-NYIST-第二次常规月赛解题报告"  class="article article-type-NYIST_SW_ACM 第二次常规月赛解题报告" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
+          NYIST-SW-ACM集训队招新介绍
         
+      </div>
+    </a>
   
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/09/23/NYIST-第二次常规月赛解题报告/">NYIST_SW_ACM 第二次常规月赛解题报告</a>
-    </h1>
   
+    <a href="/2019/10/16/LuoguP1140 【相似基因】/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Luogu-1140-相似基因</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/09/23/NYIST-第二次常规月赛解题报告/" class="article-date">
-	  <time datetime="2019-09-23T05:15:20.000Z" itemprop="datePublished">2019-09-23</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>失败的月赛</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
   
 </article>
 
 <!-- Table of Contents -->
 
-
-  
-    <article id="又见01串(PK找对象？？？)-又见01串"  class="article article-type-又见01串(PK找对象？？？)" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
     
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出格式"><span class="nav-number">2.</span> <span class="nav-text">输入输出格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式"><span class="nav-number">2.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式"><span class="nav-number">2.2.</span> <span class="nav-text">输出格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出样例"><span class="nav-number">3.</span> <span class="nav-text">输入输出样例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例1："><span class="nav-number">3.1.</span> <span class="nav-text">输入样例1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例1："><span class="nav-number">3.2.</span> <span class="nav-text">输出样例1：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">4.</span> <span class="nav-text">题解</span></a></li></ol>
     
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/09/04/又见01串/">又见01串</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/09/04/又见01串/" class="article-date">
-	  <time datetime="2019-09-04T11:28:13.000Z" itemprop="datePublished">2019-09-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
     </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>给定长度为 $n$ 的 $01$ 串 $S$ ，$m$ 次询问，每次给出长度为 $w_i$ 的 $01$ 串 $Q$。求 $S$ 中和 $Q$ 长度相同且包含 $1$ 的个数相同的子串的个数</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="「SNOI2017」一个简单的询问-一个简单的询问"  class="article article-type-「SNOI2017」一个简单的询问" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/08/19/一个简单的询问/">「SNOI2017」一个简单的询问</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/08/19/一个简单的询问/" class="article-date">
-	  <time datetime="2019-08-19T03:59:31.000Z" itemprop="datePublished">2019-08-19</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>给你一个长度为 $N$ 的序列 $a_i$，$1\leq i\leq N$，和 $q$ 组询问，每组询问读入 $l_1,r_1,l_2,r_2$，需输出</p>
-<p>$$<br>\sum\limits_{x=0}^\infty \text{get}(l_1,r_1,x)\cdot \text{get}(l_2,r_2,x)<br>$$</p>
-<p>$ \text{get}(l,r,x)$ 表示计算区间 $[l,r]$ 中，数字 $x$ 出现了多少次。</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="数列互质-数列互质"  class="article article-type-数列互质" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/08/13/数列互质/">「美团 CodeM 初赛 Round A」数列互质</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/08/13/数列互质/" class="article-date">
-	  <time datetime="2019-08-13T04:11:30.000Z" itemprop="datePublished">2019-08-13</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>给出一个长度为 $n$ 的数列 ${ a_1 , a_2 , a_3 , … , a_n }$，以及 $m$ 组询问 $( l_i , r_i , k_i)$，求区间 $[ l_i , r_i ]$ 中有多少数在该区间中的出现次数与 $k_i$ 互质。</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="Governing sand-newke7-C"  class="article article-type-Governing sand" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/08/12/newke7-C/">2019牛客暑期多校训练营   (第七场) - C - Governing sand</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/08/12/newke7-C/" class="article-date">
-	  <time datetime="2019-08-12T08:04:00.000Z" itemprop="datePublished">2019-08-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The Wow village is often hit by wind and sand,the sandstorm seriously hindered the economic development of the Wow village.<br>There is a forest in front of the Wowo village, this forest can prevent the invasion of wind and sand. But there is a rule that the number of tallest trees in the forest should be more than half of all trees, so that it can prevent the invasion of wind and sand. Cutting down a tree need to cost a certain amount of money. Different kinds of trees cost different amounts of money. Wow village is also poor.There are n kinds of trees. The number of i-th kind of trees is $P_i$ , the height of i-th kind of trees is $H_i$，the cost of cutting down one i-th kind of trees is $C_i$.</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="Chika and Friendly Pairs-HDU6534"  class="article article-type-Chika and Friendly Pairs" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/08/10/HDU6534/">Chika and Friendly Pairs (莫队+ 树状数组 + 离散化 + 预处理)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/08/10/HDU6534/" class="article-date">
-	  <time datetime="2019-08-10T09:33:56.000Z" itemprop="datePublished">2019-08-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/ACM/">ACM</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个区间中如果存在这样的一对数字 $（A,B）$ 并且 $abs（A-B）$ 不大于 $K$ ，我们就称这一对数字为奇妙的数字对。现在给出你长为n的序列，求奇妙数字对 $（i，j）$ 在 $[L,R]$ 中的个数。</p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
-  </nav>
+  </aside>
 
 </section>
         
       </div>
-      
-        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
       
       <footer id="footer">
   
@@ -788,9 +380,9 @@
 <script src="/js/scripts.js"></script>
 
 
-  <script src="/js/home.js"></script>
 
 
+  <script src="/js/dialog.js"></script>
 
 
 
@@ -875,6 +467,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
