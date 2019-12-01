@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>p2486 [sdoi2011]染色 | Never Give Up!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="树链剖分">
+  
+  
+  
+  
+  <meta name="keywords" content="树链剖分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P2486 [SDOI2011]染色">
+<meta property="og:url" content="http://yoursite.com/2019/12/01/LuoguP2486/index.html">
+<meta property="og:site_name" content="Never Give Up!">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/pic/1600.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/pic/1601.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/pic/1602.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/pic/1603.png">
+<meta property="og:image" content="https://cdn.luogu.org/upload/pic/15749.png">
+<meta property="og:updated_time" content="2019-12-01T11:53:44.741Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="P2486 [SDOI2011]染色">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/pic/1600.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Never Give Up!" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css">
+  
+
+  
+  
+  
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-LuoguP2486" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      P2486 [SDOI2011]染色
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2019/12/01/LuoguP2486/" class="article-date">
+	  <time datetime="2019-12-01T11:37:09.000Z" itemprop="datePublished">2019-12-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/ACM/">ACM</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://cdn.luogu.com.cn/upload/pic/1600.png" alt></p>
+<a id="more"></a>
+
+<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="https://www.luogu.com.cn/problem/P2486" target="_blank" rel="noopener">P2486 [SDOI2011]染色</a></p>
+<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p><img src="https://cdn.luogu.com.cn/upload/pic/1601.png" alt></p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对于每个询问操作，输出一行答案。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">6 5</span><br><span class="line">2 2 1 2 1 1</span><br><span class="line">1 2</span><br><span class="line">1 3</span><br><span class="line">2 4</span><br><span class="line">2 5</span><br><span class="line">2 6</span><br><span class="line">Q 3 5</span><br><span class="line">C 2 1 1</span><br><span class="line">Q 3 5</span><br><span class="line">C 5 1 2</span><br><span class="line">Q 3 5</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><img src="https://cdn.luogu.com.cn/upload/pic/1602.png" alt><br><img src="https://cdn.luogu.com.cn/upload/pic/1603.png" alt></p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这是这题的难点，弄懂了以后可以对线段树有个蛮大的提升</p>
+<p>我们先把问题简化一下，假设这不是一棵树，只是一条连（已经树剖过了），给定每个元素的颜色，问有几段颜色（就是这题中颜色数量的定义），我们怎么做呢？</p>
+<p>首先我们可以知道，为了保障时间复杂度，这题肯定是用线段树求解的，最先想到的是叶子节点的颜色个数为1，因为此时不存在有颜色会重复，按线段树的做法，现在要回溯求更大区间的颜色个数了，我们怎样求解呢？</p>
+<p>其实分情况讨论一下就可以知道了：见下</p>
+<p>第一种情况：</p>
+<p>左区间：1231（颜色个数为4） 右区间：222（个数为1）</p>
+<p>合并后：1231222（颜色个数为4+1=5）</p>
+<p>这是第一种情况：没有重复</p>
+<p>我们再来看第二种：</p>
+<p>左区间：1231（颜色个数为4）右区间：121（个数为3）</p>
+<p>合并后：1231121（颜色个数为4+3-1）</p>
+<p>这就是第二种情况了，左区间的最后一个颜色和右区间的第一个颜色重合，也就重复了，所以总数减一</p>
+<p>综上所述：我们用线段树维护左右颜色，区间颜色总数，就可以解决链情况下的此问题了</p>
+<p>值得注意的是：<strong>不要忘记大区间要继承小区间的左右端点颜色</strong></p>
+<p><strong>树上查询颜色个数</strong><br>我们的操作时基于树形的，所以树剖过后，我们树剖的查询函数要略作修改。</p>
+<p><img src="https://cdn.luogu.org/upload/pic/15749.png" alt></p>
+<p>如上图：树剖就是把两点之间剖成了若干条链，我们还是要解决不同的链之间颜色重复问题。上图已经很明朗了：解决<code>top[a]</code> 与 <code>fa[top[a]]</code> 颜色重复问题即可：</p>
+<p>我写了个函数 <code>Qc</code> 来查询单点的颜色，其他学过树剖的应该不会太陌生</p>
+<p><strong>区间修改</strong><br>与普通的树剖题修改无大异，注意线段树中的颜色数量更新即区间端点继承即可</p>
+<p>细节很多，要注意，不仅在树上查询要注意端点的问题，在线段树也要注意，我调了很久都是因为在线段树的查询中没有注意端点问题！！！！</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> l,r,lazy,lc,rc,num;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mid</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;tree[MAXN &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> n,m,a[MAXN];</span><br><span class="line"><span class="keyword">int</span> fa[MAXN],siz[MAXN],son[MAXN],dep[MAXN];</span><br><span class="line"><span class="keyword">int</span> top[MAXN],dfn[MAXN],tim,w[MAXN];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; E[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddEdge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    E[u].push_back(v);</span><br><span class="line">    E[v].push_back(u);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PushUp</span><span class="params">(<span class="keyword">int</span> rt)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rrt = rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> ans = tree[rt &lt;&lt; <span class="number">1</span>].num + tree[rrt].num;</span><br><span class="line">    tree[rt].lc = tree[rt &lt;&lt; <span class="number">1</span>].lc,tree[rt].rc = tree[rrt].rc;</span><br><span class="line">	<span class="keyword">if</span>(tree[rt &lt;&lt; <span class="number">1</span>].rc == tree[rrt].lc)</span><br><span class="line">        ans--;</span><br><span class="line">     tree[rt].num = ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PushDown</span><span class="params">(<span class="keyword">int</span> rt)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rrt = rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>;</span><br><span class="line">    tree[rt &lt;&lt; <span class="number">1</span>].lazy = tree[rrt].lazy = tree[rt].lazy;</span><br><span class="line">    tree[rt &lt;&lt; <span class="number">1</span>].num = tree[rrt].num = <span class="number">1</span>;</span><br><span class="line">    tree[rt &lt;&lt; <span class="number">1</span>].lc = tree[rrt].rc = tree[rt].lazy;</span><br><span class="line">    tree[rrt].lc = tree[rt &lt;&lt; <span class="number">1</span>].rc = tree[rt].lazy;</span><br><span class="line">    tree[rt].lazy = <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Build</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> rt)</span></span>&#123;</span><br><span class="line">    tree[rt].l = l,tree[rt].r = r,tree[rt].lazy = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">        tree[rt].rc = tree[rt].lc = w[l];</span><br><span class="line">        tree[rt].num = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid = tree[rt].mid();</span><br><span class="line">    Build(l,mid,rt &lt;&lt; <span class="number">1</span>);</span><br><span class="line">    Build(mid+<span class="number">1</span>,r,rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">    PushUp(rt);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> rt,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[rt].l == l &amp;&amp; tree[rt].r == r)&#123;</span><br><span class="line">        tree[rt].num = <span class="number">1</span>;</span><br><span class="line">        tree[rt].lazy = val;</span><br><span class="line">        tree[rt].lc = tree[rt].rc = val;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(tree[rt].lazy != <span class="number">-1</span>)</span><br><span class="line">        PushDown(rt);</span><br><span class="line">    <span class="keyword">int</span> mid = tree[rt].mid();</span><br><span class="line">    <span class="keyword">if</span>(mid &lt; l)&#123;</span><br><span class="line">    	Update(l,r,rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>,val);</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span>(mid &gt;= r) &#123;</span><br><span class="line">		Update(l,r,rt &lt;&lt; <span class="number">1</span>,val);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		Update(l,mid,rt &lt;&lt; <span class="number">1</span>,val);</span><br><span class="line">		Update(mid+<span class="number">1</span>,r,rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>,val);</span><br><span class="line">	&#125;</span><br><span class="line">    PushUp(rt);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Query</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> rt)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[rt].l == l &amp;&amp; tree[rt].r == r)&#123;</span><br><span class="line">        <span class="keyword">return</span> tree[rt].num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>,mid = tree[rt].mid();</span><br><span class="line">    <span class="keyword">if</span>(tree[rt].lazy != <span class="number">-1</span>)</span><br><span class="line">        PushDown(rt);</span><br><span class="line">    <span class="keyword">if</span>(mid &lt; l)&#123;</span><br><span class="line">    	ret += Query(l,r,rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span>(mid &gt;= r) &#123;</span><br><span class="line">		ret += Query(l,r,rt &lt;&lt; <span class="number">1</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		ret += Query(l,mid,rt &lt;&lt; <span class="number">1</span>) + Query(mid+<span class="number">1</span>,r,rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span>(tree[rt &lt;&lt; <span class="number">1</span>].rc == tree[rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>].lc)</span><br><span class="line">			ret--;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> f)</span></span>&#123;</span><br><span class="line">    dep[u] = dep[f] + <span class="number">1</span>;</span><br><span class="line">    fa[u] = f;</span><br><span class="line">    siz[u] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> sz = E[u].size(),maxsiz = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; sz;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> v = E[u][i];</span><br><span class="line">        <span class="keyword">if</span>(v == f)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        dfs1(v,u);</span><br><span class="line">        siz[u] += siz[v];</span><br><span class="line">        <span class="keyword">if</span>(siz[v] &gt; maxsiz)&#123;</span><br><span class="line">            maxsiz = siz[v];</span><br><span class="line">            son[u] = v;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> t)</span></span>&#123;</span><br><span class="line">    top[u] = t;</span><br><span class="line">    dfn[u] = ++tim;</span><br><span class="line">    w[tim] = a[u];</span><br><span class="line">    <span class="keyword">if</span>(!son[u])</span><br><span class="line">    	<span class="keyword">return</span> ;</span><br><span class="line">    dfs2(son[u],t);</span><br><span class="line">    <span class="keyword">int</span> sz = E[u].size();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; sz;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> v = E[u][i];</span><br><span class="line">        <span class="keyword">if</span>(v == fa[u] || v == son[u])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        dfs2(v,v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Qcolor</span><span class="params">(<span class="keyword">int</span> pos,<span class="keyword">int</span> rt)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tree[rt].l == pos &amp;&amp; tree[rt].r == pos)</span><br><span class="line">        <span class="keyword">return</span> tree[rt].lc;</span><br><span class="line">    <span class="keyword">int</span> mid = tree[rt].mid();</span><br><span class="line">    <span class="keyword">if</span>(tree[rt].lazy != <span class="number">-1</span>)</span><br><span class="line">        PushDown(rt);</span><br><span class="line">    <span class="keyword">if</span>(pos &lt;= mid)</span><br><span class="line">        <span class="keyword">return</span> Qcolor(pos,rt &lt;&lt; <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> Qcolor(pos,rt &lt;&lt; <span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Qchain</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>,Scolo,Fcolo;</span><br><span class="line">    <span class="keyword">while</span>(top[x] != top[y])&#123;</span><br><span class="line">        <span class="keyword">if</span>(dep[top[x]] &lt; dep[top[y]])</span><br><span class="line">            swap(x,y);</span><br><span class="line">        ret += Query(dfn[top[x]],dfn[x],<span class="number">1</span>);</span><br><span class="line">        Scolo = Qcolor(dfn[top[x]],<span class="number">1</span>); </span><br><span class="line">        Fcolo = Qcolor(dfn[fa[top[x]]],<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(Scolo == Fcolo)</span><br><span class="line">            ret--;</span><br><span class="line">        x = fa[top[x]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dep[x] &gt; dep[y])</span><br><span class="line">        swap(x,y);</span><br><span class="line">    ret += Query(dfn[x],dfn[y],<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mchain</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> z)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(top[x] != top[y])&#123;</span><br><span class="line">        <span class="keyword">if</span>(dep[top[x]] &lt; dep[top[y]])</span><br><span class="line">            swap(x,y);</span><br><span class="line">        Update(dfn[top[x]],dfn[x],<span class="number">1</span>,z);</span><br><span class="line">        x = fa[top[x]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dep[x] &gt; dep[y])</span><br><span class="line">        swap(x,y);</span><br><span class="line">    Update(dfn[x],dfn[y],<span class="number">1</span>,z);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> u,v;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        AddEdge(u,v);</span><br><span class="line">    &#125;</span><br><span class="line">    dfs1(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">    dfs2(<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">    Build(<span class="number">1</span>,n,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">while</span>(m--)&#123;</span><br><span class="line">        <span class="keyword">char</span> op;</span><br><span class="line">        <span class="keyword">int</span> x,y,z;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; op;</span><br><span class="line">        <span class="keyword">if</span>(op == <span class="string">'Q'</span>)&#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,Qchain(x,y));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; z;</span><br><span class="line">            mchain(x,y,z);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>附上几组写的时候用到的数据(洛谷论坛看到的)，还有参照的一位大佬的Blog<br>连接写的超级赞，本篇题解搬照与次，做日后方便查看使用:<a href="https://www.cnblogs.com/Tony-Double-Sky/p/9283262.html" target="_blank" rel="noopener">点我点我</a></p>
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">10 4</span><br><span class="line">26 22 46 21 10 46 43 9 11 33</span><br><span class="line">2 1</span><br><span class="line">3 2</span><br><span class="line">4 3</span><br><span class="line">5 2</span><br><span class="line">6 5</span><br><span class="line">7 3</span><br><span class="line">8 7</span><br><span class="line">9 5</span><br><span class="line">10 5</span><br><span class="line">C 10 1 28</span><br><span class="line">C 4 5 17</span><br><span class="line">Q 7 10</span><br><span class="line">Q 10 7</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">6 12</span><br><span class="line">0 0 11 4 2 6 </span><br><span class="line">5 4</span><br><span class="line">3 5</span><br><span class="line">3 1</span><br><span class="line">1 2</span><br><span class="line">6 5</span><br><span class="line">Q 2 6</span><br><span class="line">C 3 1 3</span><br><span class="line">Q 4 5</span><br><span class="line">Q 2 6</span><br><span class="line">Q 2 3</span><br><span class="line">C 3 3 5</span><br><span class="line">Q 2 1</span><br><span class="line">C 3 4 3</span><br><span class="line">C 2 4 2</span><br><span class="line">Q 1 3</span><br><span class="line">Q 1 6</span><br><span class="line">C 4 3 6</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">2</span><br><span class="line">4</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>nEo.大魔王</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2019/12/01/LuoguP2486/" target="_blank" title="P2486 [SDOI2011]染色">http://yoursite.com/2019/12/01/LuoguP2486/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+      
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树链剖分/">树链剖分</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/31/关于ACM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          NYIST-SW-ACM集训队招新介绍
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/26/CF602-md/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Codeforces Round#602(Div 2)解题报告</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出格式"><span class="nav-number">2.</span> <span class="nav-text">输入输出格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式："><span class="nav-number">2.1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式："><span class="nav-number">2.2.</span> <span class="nav-text">输出格式：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出样例"><span class="nav-number">3.</span> <span class="nav-text">输入输出样例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例1："><span class="nav-number">3.1.</span> <span class="nav-text">输入样例1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例1："><span class="nav-number">3.2.</span> <span class="nav-text">输出样例1：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">4.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">5.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">6.</span> <span class="nav-text">代码</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2018 - 2019 Never Give Up! All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Never Give Up!
+          </div>
+          <div class="panel-body">
+            Copyright © 2019 nEo.大魔王 All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
