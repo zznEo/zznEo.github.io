@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>educational codeforces round 80 解题目报告 | Never Give Up!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="Codeforces">
+  
+  
+  
+  
+  <meta name="description" content="上分是不可能上分的了， 这辈子是不可能上分了，只能靠舔舔超哥，来维持我的分数，以及我卑微的补题。">
+<meta name="keywords" content="Codeforces">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Educational Codeforces Round 80 解题目报告">
+<meta property="og:url" content="http://yoursite.com/2020/01/17/Codeforces-Education-80/index.html">
+<meta property="og:site_name" content="Never Give Up!">
+<meta property="og:description" content="上分是不可能上分的了， 这辈子是不可能上分了，只能靠舔舔超哥，来维持我的分数，以及我卑微的补题。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.cnblogs.com/ccut-ry/p/8922337.html">
+<meta property="og:updated_time" content="2020-01-17T14:15:43.780Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Educational Codeforces Round 80 解题目报告">
+<meta name="twitter:description" content="上分是不可能上分的了， 这辈子是不可能上分了，只能靠舔舔超哥，来维持我的分数，以及我卑微的补题。">
+<meta name="twitter:image" content="https://www.cnblogs.com/ccut-ry/p/8922337.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Never Give Up!" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css">
+  
+
+  
+  
+  
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="Educational Codeforces Round 80 解题目报告-Codeforces-Education-80" style="width: 75%; float:left;" class="article article-type-Educational Codeforces Round 80 解题目报告" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Educational Codeforces Round 80 解题目报告
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/01/17/Codeforces-Education-80/" class="article-date">
+	  <time datetime="2020-01-17T13:14:39.000Z" itemprop="datePublished">2020-01-17</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/ACM/">ACM</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上分是不可能上分的了， 这辈子是不可能上分了，只能靠舔舔超哥，来维持我的分数，以及我卑微的补题。</p>
+<a id="more"></a>
+
+<h1 id="A-Deadline"><a href="#A-Deadline" class="headerlink" title="A.Deadline"></a>A.Deadline</h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>有一个工作时间为 $n$ 的任务，但是你却需要花费 $d$ 天来完成，但是你可以优化你的工作，问你能否找到一个 $x$ ,使得 $x+\lceil \dfrac {d}{x+1}\rceil \leq n$ 成立</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>直接化简这个不等式，得到 $x^{2}+\left( 1-n\right) <em>x+\left( d-n\right) \leq 0$ 成立，然后直接二次函数的最大值小于等于 $0$ 成立即可，即 $4</em>d-1-n^{2}-2*n\leq 0$</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1e4</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; P;</span><br><span class="line"><span class="built_in">string</span> s[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">NULL</span>),<span class="built_in">cout</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> n, d;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; d;</span><br><span class="line">        ans = <span class="number">4</span>*d - <span class="number">1</span> - n*n - <span class="number">2</span>*n;</span><br><span class="line">        <span class="keyword">if</span>(ans &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="B-Yet-Another-Meme-Problem"><a href="#B-Yet-Another-Meme-Problem" class="headerlink" title="B.Yet Another Meme Problem"></a>B.Yet Another Meme Problem</h1><h2 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h2><p>给你一个 $A$， 一个 $B$，问你能在这个范围内找到多少个 $a*b + a + b = conc(a,b)$ , $conc(a, b)$ 表示把 $a，b$ 直接连接起来</p>
+<h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>打表找规 <del>(一开始表打错了，死活不对)</del> ，可以发现，这样的数只能是 $9$, $99$,$999$….这种，所以直接判断 $B$ 内 $9$ 的个数，在乘上 $A$ 的值就可以了</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">3e5</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">NULL</span>),<span class="built_in">cout</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        ll a, b, cnt = <span class="number">0</span>,tb = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        <span class="keyword">while</span>(tb &lt;= b)&#123;</span><br><span class="line">            tb = ll(tb * <span class="number">10</span> + <span class="number">9</span>);</span><br><span class="line">            <span class="keyword">if</span>(tb &gt; b)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; cnt * a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="C-Two-Arrays"><a href="#C-Two-Arrays" class="headerlink" title="C.Two Arrays"></a>C.Two Arrays</h1><h2 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h2><p>给你一个 $n$， 一个 $m$，让你构造两个序列 $a_i$ 和 $b_i$ 满足以下条件</p>
+<ul>
+<li>两个数组的长度都等于 $m$；</li>
+<li>每个数组的每个元素都是 $1$ 到 $n$ (含)之间的整数；</li>
+<li>对于数组中的每个数字保证 $a_i \leq b_i$</li>
+<li>数组 $a_i$ 按非降序排序；</li>
+<li>数组 $b_i$ 按非升序排序。</li>
+</ul>
+<h2 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h2><p><del>(一开始，我还以为是打表找规律，害，还是太菜)</del></p>
+<p>两种解法:</p>
+<ol>
+<li>dp</li>
+<li>组合数学 （隔板法）<h3 id="解法1："><a href="#解法1：" class="headerlink" title="解法1："></a>解法1：</h3>$dp[i][j]$ 表示有 $j$ 个数每个数的范围为 $1～i$ 时的非递减排列种数，因为 $n$ 和 $m$ 的数据范围也不大，用记忆化搜索很快可以得出每一个值。</li>
+</ol>
+<p>再来看满足条件时的 $(a,b)$，$a$ 为非递减序列，$b$ 为非递增序列，所以 $b$ 的最后一个数大于等于 $a$ 的最后一个数是充要条件，因此我们只需要遍历 $a$ 最后一个数即可得出答案，例如当 $a$ 的最后一个数为 $3$ 的时候，这部分的答案就应该是 $(dp[3][m]−dp[2][m])∗dp[n−3+1])$ ，括号里是 $a$ 的种数（利用容斥原理），括号外是 $b$ ，因为 $b$ 的范围是 $3～n$ ，它的排列种数与 $1～(n−3+1)$ 的排列种数相同。</p>
+<p>注意取模！</p>
+<h4 id="代码1"><a href="#代码1" class="headerlink" title="代码1"></a>代码1</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1e4</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; P;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> dp[<span class="number">1005</span>][<span class="number">15</span>];</span><br><span class="line"> </span><br><span class="line"><span class="function">ll <span class="title">dfs</span><span class="params">(ll n, ll m)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(dp[n][m])</span><br><span class="line">        <span class="keyword">return</span> dp[n][m];</span><br><span class="line">    <span class="keyword">if</span>(m == <span class="number">1</span>)&#123;</span><br><span class="line">        dp[n][m] = n;</span><br><span class="line">        <span class="keyword">return</span> dp[n][m];</span><br><span class="line">    &#125;</span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>;i &lt;= n;i++)</span><br><span class="line">        ans = (ans + dfs(i, m<span class="number">-1</span>)) % MOD;</span><br><span class="line">    dp[n][m] = (ans + MOD) % MOD;</span><br><span class="line">    <span class="keyword">return</span> dp[n][m];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">NULL</span>),<span class="built_in">cout</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">    ll n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="keyword">sizeof</span>(dp));</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>;i &lt;= n;i++)</span><br><span class="line">        ans=(ans+(dfs(i,m)-dfs(i<span class="number">-1</span>,m))*dfs(n-i+<span class="number">1</span>,m)%MOD+MOD)%MOD;</span><br><span class="line">        <span class="comment">//ans = (ans + (dfs(i, m)- dfs(i-1, m))) % MOD * dfs(n - i + 1, m) % MOD;</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="解法2"><a href="#解法2" class="headerlink" title="解法2"></a>解法2</h3><p>由题目可知， $a$ 为非递减序列，$b$ 为非递增序列，那么就是找一个取值范围为 $1～n$ 的长度为 $2m$  的非降序列，的数量。那么问题转化，假设对于每个数字取了 $x_1$ , $x_2$,…..$x_n$ 次，那么 $x_1$ + $x_2$ + ….. + $x_n$ = $2*m$，$x_i$ 可以为空，那么此时就可以套 <img src="https://www.cnblogs.com/ccut-ry/p/8922337.html" alt="隔板法">的模型了。最后就是求 $C^{n-1}_{2m+n-1}$,</p>
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><p>随便找求组合数的板子都能过</p>
+<h1 id="D-Minimax-Problem"><a href="#D-Minimax-Problem" class="headerlink" title="D.Minimax Problem"></a>D.Minimax Problem</h1><h2 id="待补"><a href="#待补" class="headerlink" title="待补"></a>待补</h2><h2 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h2><h2 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h2><h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="E-Messenger-Simulator"><a href="#E-Messenger-Simulator" class="headerlink" title="E.Messenger Simulator"></a>E.Messenger Simulator</h1><h2 id="题意-4"><a href="#题意-4" class="headerlink" title="题意"></a>题意</h2><p>给你一个消息队列，每次给你一个消息序号，会把该消息排放至序列首位，其他元素依次向后，问经过 $m$ 次修改后，每个消息最远到达的位置，和最近到达的位置分别是多少</p>
+<h2 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h2><p>维护一个，记录这个序列每个数字的位置，把这个序列的前 $m$ 个位置空出来，用 $BIT$ 去维护每个数字前面有多少个数字即可</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">3e6</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> tree[MAXN];</span><br><span class="line"><span class="keyword">int</span> mn[MAXN], mx[MAXN], a[MAXN], pos[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &amp; (-x);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span><span class="params">(<span class="keyword">int</span> pos,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = pos;i &lt; MAXN;i += lowbit(i))</span><br><span class="line">        tree[i] += val;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = x;i &gt; <span class="number">0</span>;i -= lowbit(i))</span><br><span class="line">        ans += tree[i];</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">NULL</span>),<span class="built_in">cout</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++)&#123;</span><br><span class="line">        mn[i] = mx[i] = i;</span><br><span class="line">        pos[i] = m+i;</span><br><span class="line">        Update(m+i, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= m;i++)&#123;</span><br><span class="line">    	<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">        mn[a[i]] = <span class="number">1</span>;</span><br><span class="line">        mx[a[i]] = max(mx[a[i]],get(pos[a[i]]));</span><br><span class="line">        Update(pos[a[i]], <span class="number">-1</span>);</span><br><span class="line">        pos[a[i]] = m - i + <span class="number">1</span>;</span><br><span class="line">        Update(pos[a[i]], <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++)&#123;</span><br><span class="line">        mx[i] = max(mx[i],get(pos[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; mn[i] &lt;&lt; <span class="string">" "</span> &lt;&lt; mx[i] &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>nEo.大魔王</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2020/01/17/Codeforces-Education-80/" target="_blank" title="Educational Codeforces Round 80 解题目报告">http://yoursite.com/2020/01/17/Codeforces-Education-80/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+      
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Codeforces/">Codeforces</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/31/关于ACM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          NYIST-SW-ACM集训队招新介绍
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/01/LuoguP2486/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">P2486 [SDOI2011]染色</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Deadline"><span class="nav-number">1.</span> <span class="nav-text">A.Deadline</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">1.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-Yet-Another-Meme-Problem"><span class="nav-number">2.</span> <span class="nav-text">B.Yet Another Meme Problem</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意-1"><span class="nav-number">2.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解-1"><span class="nav-number">2.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-1"><span class="nav-number">2.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Two-Arrays"><span class="nav-number">3.</span> <span class="nav-text">C.Two Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意-2"><span class="nav-number">3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解-2"><span class="nav-number">3.2.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解法1："><span class="nav-number">3.2.1.</span> <span class="nav-text">解法1：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码1"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">代码1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法2"><span class="nav-number">3.2.2.</span> <span class="nav-text">解法2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码-2"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D-Minimax-Problem"><span class="nav-number">4.</span> <span class="nav-text">D.Minimax Problem</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#待补"><span class="nav-number">4.1.</span> <span class="nav-text">待补</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意-3"><span class="nav-number">4.2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解-3"><span class="nav-number">4.3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-3"><span class="nav-number">4.4.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E-Messenger-Simulator"><span class="nav-number">5.</span> <span class="nav-text">E.Messenger Simulator</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意-4"><span class="nav-number">5.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解-4"><span class="nav-number">5.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-4"><span class="nav-number">5.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2018 - 2020 Never Give Up! All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Never Give Up!
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 nEo.大魔王 All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
